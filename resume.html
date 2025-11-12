@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Nick Curtis</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+        body {
+            background-image: url('PICTURES AND VIDEOS/Minneapolis.jpeg');
+        }
+
+        .resume-columns {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .resume-column-left {
+            flex: 0 0 30%;
+            border-right: 2px solid rgba(52, 152, 219, 0.2);
+            padding-right: 2rem;
+        }
+
+        .resume-column-right {
+            flex: 0 0 70%;
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .resume-header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            align-items: center;
+            color: var(--text-color);
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-color);
+        }
+
+        .separator {
+            color: var(--accent-color);
+        }
+
+        .resume-block {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .resume-block:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .resume-block h2 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project {
+            margin-bottom: 1.5rem;
+        }
+
+        .project:last-child {
+            margin-bottom: 0;
+        }
+
+        .project h3 {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.7rem;
+        }
+
+        .skill {
+            background: rgba(52, 152, 219, 0.1);
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .education {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .edu-item h3 {
+            color: var(--accent-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .edu-item .degree {
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+        }
+
+        .edu-item .date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .study-list {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .study-list li {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .study-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0.5rem;
+        }
+
+        .download-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 900px) {
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('PICTURES AND VIDEOS/Birds ResumeMob.jpeg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                z-index: -1;
+            }
+            body {
+                /* Remove the original background from the body on mobile */
+                background-image: none;
+                background-color: transparent; /* Ensure no fallback color interferes */
+            }
+            .resume-columns {
+                overflow-x: hidden; /* Prevent horizontal scrolling */
+                flex-direction: column; /* Stack columns vertically */
+            }
+            .resume-column-left {
+                border-right: none; /* Remove the vertical divider */
+                padding-right: 0;
+                border-bottom: 2px solid rgba(52, 152, 219, 0.2); /* Add a horizontal divider */
+                padding-bottom: 2rem;
+            }
+            .resume-block h2 { font-size: 1.1rem; }
+            .project h3, .edu-item h3 { font-size: 1rem; }
+            .skill, .study-list li, .edu-item p { font-size: 0.9rem; }
+        }
+        @media print {
+            .resume-columns { gap: 1.5rem; }
+            .resume-column-left { padding-right: 1.5rem; }
+        }
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            .edu-item .date { color: #ccc; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <a href="index.html">Home</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="duluth.html">Discover Duluth & UMD</a>
+        <a href="resume.html">Resume</a>
+        <a href="career.html">Career Interests</a>
+        <a href="game.html">Game</a>
+    </nav>
+    <div class="page-nav prev-page">
+        <button onclick="navigatePages('prev')" title="Previous Page">←</button>
+    </div>
+    <div class="page-nav next-page">
+        <button onclick="navigatePages('next')" title="Next Page">→</button>
+    </div>
+    
+    <div class="container">
+        <section class="resume-section">
+            <div class="resume-header">
+                <h1>Nicholas Curtis</h1>
+                <div class="contact-info">
+                    <a href="mailto:systems.inquiries@gmail.com">systems.inquiries@gmail.com</a>
+                    <span class="separator">•</span>
+                    <a href="index.html" class="website-link">Personal Website</a>
+                </div>
+            </div>
+
+            <div class="resume-block">
+                <h2>Professional Summary</h2>
+                <p>Independent systems designer seeking opportunities to transform traditional and current frameworks into more adaptive and efficient frameworks. Skilled at adjusting current models in one domain and integrating them across related domains to create positive externalities that simultaneously benefit the client's business and society. Personal models used are both domain dependent and independent, being applicable across a flexible range of domains, and are targeted at persistent social problems or issues of contention.</p>
+            </div>
+
+            <div class="resume-columns">
+                <div class="resume-column-left">
+                    <div class="resume-block">
+                        <h2>Education</h2>
+                        <div class="education">
+                            <div class="edu-item">
+                                <h3>University of Minnesota Duluth</h3>
+                                <p class="degree">Bachelor of Business Administration in Management</p>
+                                <p class="date">2025-Present</p>
+                            </div>
+                            <div class="edu-item">
+                                <h3>Minnesota North College</h3>
+                                <p class="degree">Associate of the Arts</p>
+                                <p class="date">2022-2024</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-block">
+                        <h2>Independent Study</h2>
+                        <ul class="study-list">
+                            <li>Financial Modeling</li>
+                            <li>Healthcare Modeling</li>
+                            <li>Sovereign Wealth Fund Research</li>
+                            <li>Excel Modeling and Dashboard Design</li>
+                        </ul>
+                    </div>
+
+                    <div class="download-section">
+                        <a href="PICTURES AND VIDEOS/Resume - Nick Curtis.pdf" class="download-btn" download>Download PDF</a>
+                    </div>
+                </div>
+
+                <div class="resume-column-right">
+                    <div class="resume-block">
+                        <h2>Core Competencies</h2>
+                        <div class="skills-grid">
+                            <span class="skill">System Modeling</span>
+                            <span class="skill">Original Processing Techniques</span>
+                            <span class="skill">Strategic Reasoning</span>
+                            <span class="skill">Intangible Structural Analysis</span>
+                            <span class="skill">Abstract Conceptualizing</span>
+                            <span class="skill">Writing Proficiency</span>
+                            <span class="skill">Meta-pattern Recognition</span>
+                            <span class="skill">Complementary Logic Probing</span>
+                        </div>
+                    </div>
+
+                    <div class="resume-block">
+                        <h2>Projects</h2>
+                        <div class="project">
+                            <h3>Duluth Integrated Healthcare Ecosystems (Synergy Healthcare)</h3>
+                            <p>Designed a modified hospital platform centered on eliminating insurance, reducing costs, and increasing operating margins through strategic structural changes. The system was built to reduce taxation dependency, improve operational efficiency, and enable annual dividend-based bonuses for both employers and employees. It also promotes high-standard, community-based employment and delivers a range of systemic benefits.</p>
+                        </div>
+                        <div class="project">
+                            <h3>Dynamic Taxonomic Modeling</h3>
+                            <p>Developed a seven-step modeling framework applicable across diverse fields. It enables accurate tracking and selective modification of variables with differing magnitudes to produce targeted, collective outcomes. The model supports strategic intervention and emergent system behavior across healthcare, finance, and other complex domains.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

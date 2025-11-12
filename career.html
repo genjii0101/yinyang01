@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Interests - Nick Curtis</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('PICTURES AND VIDEOS/Inky.jpeg');
+        }
+
+        .muted { color: #555; }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        .divider { height: 1px; background: rgba(0,0,0,0.06); margin: 1rem 0; }
+
+        .highlight {
+            background: var(--highlight-bg);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .cta {
+            display: inline-block;
+            padding: 0.8rem 1.2rem;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .challenge-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem auto;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .challenge-list label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        .challenge-list input[type="checkbox"] {
+            margin-right: 12px;
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+        }
+
+        .cta.disabled {
+            pointer-events: none;
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 900px) {
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('PICTURES AND VIDEOS/Tiger CareerMob.jpeg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                z-index: -1;
+            }
+            body {
+                /* Remove the original background from the body on mobile */
+                background-image: none;
+                background-color: transparent; /* Ensure no fallback color interferes */
+            }
+            .grid-3 { grid-template-columns: 1fr; }
+            .highlight h3 { font-size: 1.2rem; }
+        }
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) and (min-width: 901px) {
+            h1 {
+                color: #2c3e50;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <a href="index.html">Home</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="duluth.html">Discover Duluth &amp; UMD</a>
+        <a href="resume.html">Resume</a>
+        <a href="career.html">Career Interests</a>
+        <a href="game.html">Game</a>
+    </nav>
+
+    <div class="page-nav prev-page">
+        <button onclick="navigatePages('prev')" title="Previous Page">←</button>
+    </div>
+    <div class="page-nav next-page">
+        <button onclick="navigatePages('next')" title="Next Page">→</button>
+    </div>
+
+    <div class="container">
+        <h1>Career Interests</h1>
+
+        <!-- Intro / Intent -->
+        <section class="career-section">
+            <h2>Intent</h2>
+            <p>I am not necessarily looking to be employed in the traditional sense. What I aim to do transcends conventional roles, making networking and seeking “employment” difficult. I want to work with the upper management in any of these three companies to produce desirable outcomes on all fronts of the healthcare field. This means I want to work with the various departments of each healthcare system to make the vision of this reform reality.</p>
+            <p>I would love to tackle reform in this domain to begin a portfolio recording successfully implemented system changes applied to industries across the country. It’s not about pride or recognition. It’s not about wealth or fame. To me it’s about making a lasting difference.</p>
+        </section>
+
+        <!-- Target Organizations -->
+        <section class="career-section">
+            <h2>Organizations</h2>
+            <div class="grid-3">
+                <div class="card" style="--logo-url: url('PICTURES AND VIDEOS/St. Luke\'s.png');">
+                    <h3>Aspirus Health (Wausau, WI)</h3>
+                    <p><strong>Address:</strong> 2200 Westwood Drive, Wausau, WI 54401</p>
+                    <p><strong>Phone:</strong> (715) 847-2118</p> 
+                    <p><strong>Website:</strong> <a href="https://aspirus.org" target="_blank" rel="noopener noreferrer">aspirus.org</a></p>
+                    <div class="divider"></div>
+                    <p><strong>Mission:</strong> We heal people, promote health and strengthen communities.</p>
+                    <p><strong>Vision:</strong> Aspirus is a catalyst for creating healthy, thriving communities, trusted and engaged above all others.</p>
+                    <p><strong>Core values:</strong> Compassion; Accountability; Collaboration; Foresight; Joy</p>
+                </div>
+
+                <div class="card" style="--logo-url: url('PICTURES AND VIDEOS/Essentia.png');">
+                    <h3>Essentia Health (Duluth, MN)</h3>
+                    <p><strong>Address:</strong> 502 East 2nd Street, Duluth, MN 55805</p>
+                    <p><strong>Phone:</strong> (218) 786-8376</p>
+                    <p><strong>Website:</strong> <a href="https://essentiahealth.org" target="_blank" rel="noopener noreferrer">essentiahealth.org</a></p>
+                    <div class="divider"></div>
+                    <p><strong>Mission:</strong> We are called to make a healthy difference in people’s lives.</p>
+                    <p><strong>Vision:</strong> To be a national leader in providing high-quality, cost-effective, integrated health care services.</p>
+                    <p><strong>Core values:</strong> Quality; Hospitality; Respect; Justice; Stewardship; Teamwork</p>
+                </div>
+
+                <div class="card" style="--logo-url: url('PICTURES AND VIDEOS/Fairview.png');">
+                    <h3>Fairview Health Services (Minneapolis, MN)</h3>
+                    <p><strong>Address:</strong> 2450 Riverside Avenue, Minneapolis, MN 55454</p>
+                    <p><strong>Phone:</strong> (612) 672-7272</p>
+                    <p><strong>Website:</strong> <a href="https://fairview.org" target="_blank" rel="noopener noreferrer">fairview.org</a></p>
+                    <div class="divider"></div>
+                    <p><strong>Mission:</strong> Fairview is driven to heal, discover and educate for longer, healthier lives.</p>
+                    <p><strong>Vision:</strong> Fairview is driving a healthier future.</p>
+                    <p><strong>Core values:</strong> Dignity; Integrity; Service</p>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .card[style*="--logo-url"]::before {
+                background-image: var(--logo-url);
+            }
+        </style>
+        <!-- Interest Range -->
+        <section class="career-section">
+            <h2>Interest Range</h2>
+            <p>I am interested in working with these healthcare providers for the same reasons. One of the program initiatives I’m developing needs a pilot, and because the framework is nearly pilot-ready, these local hospital systems are ideal candidates. A successful pilot program in St. Louis County could lead to broad regional adoption across Minnesota or become a national benchmark for healthcare ecosystems.</p>
+        </section>
+
+        <!-- Divisions -->
+        <section class="career-section" style="width: fit-content; margin: 0 auto var(--section-spacing);">
+            <h2>Divisions of Interest</h2>
+            <div class="card">
+                <ul>
+                    <li>Executive Strategy</li>
+                    <li>Finance / Treasury</li>
+                    <li>Supply Chain / Materials Management</li>
+                    <li>Pharmacy Operations</li>
+                    <li>Care Management</li>
+                    <li>Facility / Engineering</li>
+                    <li>Regulatory / Legal / Quality</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Value Proposition: Vision, Strategy, Alignment -->
+        <section class="career-section">
+            <h2>What can I bring to the table? What value could I add?</h2>
+
+            <div class="highlight">
+                <h3>Vision</h3>
+                <p>This may be one of my strongest attributes. As my knowledge grows, as I reflect, insights start to emerge that connect the world together, and as I mentioned before, they take the forms of systems. Being able to see systems leads to vision: what is and what should (or could) be. The is-ought gap, after all, isn’t as elusive as we once believed.
+                <p>This vision seeks to align ethical frameworks with economic realities. It seeks to unify both divided forces, to eliminate the friction between opposing moral frameworks. </p>
+            </div>
+
+            <div class="highlight">
+                <h3>Strategy</h3>
+                <p>Strategy turns vision into reality. An idea without action remains in the ether. Being able to strategize means giving something conceptual a tangible form. This requires knowing when, how and where to implement something, and who is competent enough to fulfill the tasks. It also means developing feedback loops, so the benefits are always compounding in every direction while the drawbacks are constantly being reduced. It means developing systems whose inputs feed the outputs, and outputs feed the inputs.</p>
+            </div>
+
+            <div class="highlight">
+                <h3>Alignment</h3>
+                <p>I recognize the importance of aligning the various departments and roles within the healthcare field. These aren’t exclusive domains, they are interdependent. Alignment of their goals through their duties and responsibilities (along with appropriate incentives) is crucial for efficiency. </p>
+            </div>
+        </section>
+
+        <!-- Impact Potential (framed qualitatively) -->
+        <section class="career-section">
+            <h2>Impact Potential</h2>
+            <p>I know hospitals are typically not traditional businesses. As I understand, hospitals operate with thin margins, from 1-5% on average in the Duluth area. Because my method results in a surplus-generating engine, it is estimated to increase operating margins three- to four-fold, annually. And that is just the operating margin.</p>
+
+            <div class="card" style="width: fit-content; margin: 1.5rem auto;">
+                <p><strong>Potential and targeted benefits of a successful pilot:</strong></p>
+                <ul>
+                    <li>Expand Care Access</li>
+                    <li>Eliminate Claim Denials</li>
+                    <li>Improve Employer–Employee Relations</li>
+                    <li>Improve Quality of Care</li>
+                    <li>Create Local Employment</li>
+                    <li>Relieve Infrastructure Dependency</li>
+                    <li>Reduce Per-Person Cost </li>
+                    <li>Improve Financial Security
+                </ul>
+
+            </div>
+             <p>This framework is structured to preserve executive benefits while distributing bonuses across the hospital ecosystem. Detailed financials and projections are available for confidential pilot discussions.</p>
+        </section>
+
+        <!-- Other Considerations -->
+        <section class="career-section">
+            <h2>Other Considerations</h2>
+            <p>While healthcare feels like the best proving grounds for my systems to make positive change, it is not the only domain I see myself having the potential to make an impact. I am open to collaborating in various environments where complexity may be fragmenting efficiency, and skewing desired outcomes.</p>
+            <div class="card" style="width: fit-content; margin: 1.5rem auto;">
+                <p>Some of these other domains include:</p>
+                <ul>
+                    <li>Public Policy and Governance</li>
+                    <li>Business Strategy and Organization Design</li>
+                    <li>Education Systems</li>
+                    <li>Infrastructure and Regional Development</li>
+                    <li>Philanthropic and Social Endeavors</li>
+                </ul>
+            </div>
+            <p>If the system is complex, interdependent, and in need of transformation — I’m interested.</p>
+        </section>
+
+        <!-- Closing Challenge + CTA -->
+        <section class="career-section">
+            <h2>Closing Challenge</h2>
+            <p>So what value do I bring? Ask yourself:</p>
+            <div class="challenge-list">
+                <label><input type="checkbox" class="challenge-checkbox"> Do I want to help people?</label>
+                <label><input type="checkbox" class="challenge-checkbox"> Do I like money?</label>
+                <label><input type="checkbox" class="challenge-checkbox"> Do I want to serve my community and myself at the same time?</label>
+                <label><input type="checkbox" class="challenge-checkbox"> Are hospitals meant to be both ethically and economically sound?</label>
+                <label><input type="checkbox" class="challenge-checkbox"> Do I want to have a role in this vision?</label>
+            </div>
+
+            <div style="margin-top:1.5rem; text-align: center;">
+                <p style="margin-bottom: 1rem; font-weight: bold;">Because I can make that happen.</p>
+                <a id="pilot-cta" class="cta" href="mailto:systems.inquiries@gmail.com?subject=Explore%20Systems%20Architecture">Explore Systems Architecture</a>
+            </div>
+        </section>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        // --- Logic for enabling the pilot partnership button ---
+        const checkboxes = document.querySelectorAll('.challenge-checkbox');
+        const pilotButton = document.getElementById('pilot-cta');
+
+        function checkAllBoxesTicked() {
+            const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+            if (allChecked) {
+                pilotButton.classList.remove('disabled');
+            } else {
+                pilotButton.classList.add('disabled');
+            }
+        }
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    const rect = this.getBoundingClientRect();
+                    const x = rect.left + (rect.width / 2) + window.scrollX;
+                    const y = rect.top + (rect.height / 2) + window.scrollY;
+                    // Call the global function with specific coordinates
+                    createPetalFall(null, { x, y });
+                }
+                checkAllBoxesTicked();
+            });
+        });
+        // Initially disable the button on page load
+        checkAllBoxesTicked();
+    </script>
+</body>
+</html>

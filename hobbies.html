@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hobbies</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        body {
+            padding-top: calc(var(--nav-height) + 2rem);
+            background-image: url('PICTURES AND VIDEOS/Hobbies BG.jpeg');
+        }
+
+        .section {
+            opacity: 0; /* Keep for staggered animation */
+        }
+        
+        .section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .section:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .section:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .section h3 {
+            color: #000000;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .section p {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: center;
+            align-items: center;
+        }
+        .woodworking-gallery {
+            justify-content: space-between;
+        }
+
+        .woodworking-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .woodworking-column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .woodworking-gallery img {
+            width: 250px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .woodworking-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .woodworking-gallery video {
+            width: 400px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .systems-gallery img {
+            width: 80%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .swordsmanship-gallery {
+            justify-content: space-between;
+        }
+
+        .swordsmanship-gallery img {
+            width: 45%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 900px) {
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('PICTURES AND VIDEOS/Lake Tree HobMob.jpeg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                z-index: -1;
+            }
+            body {
+                /* Remove the original background from the body on mobile */
+                background-image: none;
+                background-color: transparent; /* Ensure no fallback color interferes */
+            }
+            .image-gallery {
+                overflow-x: hidden; /* Prevent horizontal scrolling */
+                flex-direction: column; /* Stack gallery items vertically */
+                gap: 2rem;
+            }
+            .section h3 { font-size: 1.2rem; }
+            .swordsmanship-gallery img {
+                width: 80%; /* Adjust width for mobile */
+                height: 200px; /* Set a fixed height to create a rectangular crop */
+                object-fit: cover; /* Ensure the image covers the area, cropping as needed */
+            }
+        }
+
+        @media (prefers-color-scheme: dark) and (min-width: 901px) {
+            h1 {
+                color: #2c3e50; /* Keep main title dark */
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <a href="index.html">Home</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="duluth.html">Discover Duluth & UMD</a>
+        <a href="resume.html">Resume</a>
+        <a href="career.html">Career Interests</a>
+        <a href="game.html">Game</a>
+    </nav>
+    
+    <div class="page-nav prev-page">
+        <button onclick="navigatePages('prev')" title="Previous Page">←</button>
+    </div>
+    <div class="page-nav next-page">
+        <button onclick="navigatePages('next')" title="Next Page">→</button>
+    </div>
+
+    <div class="container">
+        <!-- The rest of your hobbies page content -->
+
+        <div class="header">
+            <h1>My Hobbies</h1>
+        </div>
+
+        <section class="section" id="woodworking">
+            <h2>Woodworking</h2>
+            <p>Woodworking has been a hobby of mine for many years. There is something captivating about the grandeur and asymmetry found in nature that cannot be artificially recreated. When I build a project with the intention of capturing nature's flow, I tend to work the pieces with machinery as little as possible. Retaining nature's intent throughout the piece I'm designing feels humbling, as if we cannot improve upon the culmination of nature's aesthetics. I think we would all be better off decorating our homes with at least one small reminder of the beauty permeating our origin, a reminder to be grateful.</p>
+            <p>Woodworking can be dangerous. I once had a piece of wood I was sawing fling back at me despite having the guard fastened properly, and I've also had a blade on the log lathe shoot the wood chip of a knot through an aluminum can. Though I tend to be cautious I am not risk-averse, but nor am I reckless.</p>
+            <div class="image-gallery woodworking-gallery">
+                <div class="woodworking-column">
+                    <img src="PICTURES AND VIDEOS/Bird Feeder.jpeg" alt="Custom Four-Paned Bird Feeder" title="Custom Four-Paned Bird Feeder" />
+                    <img src="PICTURES AND VIDEOS/Mushroom End Table.jpeg" alt="Night Stand Resembling a Mushroom" title="Night Stand Resembling a Mushroom" />
+                    <img src="PICTURES AND VIDEOS/Log Swing.jpeg" alt="Rough-Sanded Log Swing" title="Rough-Sanded Log Swing" />
+                </div>
+                <video controls title="Log Lathe Chipping Seasoned Timbers">
+                    <source src="PICTURES AND VIDEOS/Log Lathe.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="woodworking-column">
+                    <img src="PICTURES AND VIDEOS/Desk.jpeg" alt="Custom Pedestal Desk, Natural Light Color" title="Custom Pedestal Desk, Natural Light Color" />
+                    <img src="PICTURES AND VIDEOS/Unfinished Vanity.jpeg" alt="Unfinished Vanity Top with Live-Edge and Salvaged (Shou Sugi Ban) Wood Frame" title="Unfinished Vanity Top with Live-Edge and Salvaged (Shou Sugi Ban) Wood Frame" />
+                    <img src="PICTURES AND VIDEOS/Bedframe.jpeg" alt="Custom Diamond Willow Ultra-King Bed Frame" title="Custom Diamond Willow Ultra-King Bed Frame" />
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="systems-architecture">
+            <h2>Systems Architecture</h2>
+            <p>Complex mapping and diagramming is similar to the product of woodworking, in that it is a way for me to creatively design something that functionally reinvigorates a system. Because my method is unique, it is both dependent and independent of the context: the structure of the method is independent of the context, but the contents are dependent on context. In this way, regardless of what the context may be (whatever the subject of the system I am mapping) can be tackled efficiently and systematically. In a sense, it is a universal method of resolving frictions between the components.</p>
+            <p>The system also takes both inductive and deductive reasoning, and both supervenience and subvenience into consideration in its structure. In this way, it becomes simple to identify emergent properties and reductive properties. This becomes useful because it simplifies how to determine the magnitudes of effects between the tiers of the structure. Making correlation judgments and magnitudes of change judgments are valuable when determining what factor to change, and how much to change the factor to get the desired result.</p>
+            <p>Because my mind organizes the structure of data in this way naturally, it is effortless, and I have come to embrace, rather than resist, the flow of systems.</p>
+            <div class="image-gallery systems-gallery">
+                <img src="PICTURES AND VIDEOS/Basic Taxonomic Tree Structure.jpeg" alt="A Taxonomic Tree Arranged Hierarchically, With Relationships Mapped" title="A Taxonomic Tree Arranged Hierarchically, With Relationships Mapped" />
+            </div>
+            <div id="why-game" style="margin-top: 2rem;">
+              <h3 style="text-align: center; color: var(--primary-color);">The Why Game</h3>
+              <div class="scale-container">
+                <div class="scale-beam" id="why-game-scale-beam"></div>
+                <div class="scale-base"></div>
+              </div>
+
+              <p style="text-align: center; font-style: italic; max-width: 600px; margin: 0.5rem auto 1.5rem; font-size: 0.9rem; color: var(--text-color);">
+                Wherever we land on the perspective gradient, we should always strive to understand that the general and specific states are intertwined. This example uses interpersonal conflict as its context. Apply its underlying principle to a context of your own, and let your mind wander!
+              </p>
+              <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; align-items: flex-start;">
+                <!-- Dropdown Menu -->
+                <div style="flex: 1; min-width: 200px; max-width: 300px;">
+                  <label for="gradient-select" style="font-weight: bold; color: var(--text-color);">Select a Perspective Gradient:</label>
+                  <select id="gradient-select" style="width: 100%; padding: 0.5rem; border-radius: 8px; margin-top: 0.5rem;">
+                    <option value="" disabled selected>Select a gradient...</option>
+                    <option value="egocentric">Egocentric</option>
+                    <option value="semi-egocentric">Semi-Egocentric</option>
+                    <option value="contextual">Contextual</option>
+                    <option value="structural">Structural</option>
+                    <option value="totality">Totality</option>
+                  </select>
+                </div>
+            
+                <!-- Response Box -->
+                <div id="response-box" style="flex: 2; min-width: 300px; max-width: 500px; background: var(--card-bg); color: var(--text-color); padding: 1rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                  <p><em>Select a gradient to see its response.</em></p>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <section class="section" id="swordsmanship">
+            <h2>Swordsmanship</h2>
+            <p>I have always loved swords and the cultivation that accompanies learning swordsmanship. In modern times, it is good to have a healthy dose of the archaic to balance out our expectations. Through practicing swordsmanship, I develop mind, body, and spirit in tandem during a single activity. Refining myself through discipline, physical fitness, and spiritual sensitivity, I discovered insights that lie concealed in the cavern of the self.</p>
+            <p>Training the mind, body and spirit has benefits to any person willing to grow. It results in a well-rounded individual—somebody capable in all realms—whose versatility can be adapted according to the situation. I think this is more useful than over-specializing in a single realm as this enables the individual to have the potential to dig deeply into any realm of subjects and not be bound to the constraints of a single subject.</p>
+            <p>Learning that one can in fact injure others leads them to question when it is appropriate and necessary to do so. This internal exploration assists in cultivating an ethical credo and standard of conduct to abide by in daily life. The insight to cultivate character, virtues, and to balance them accordingly when appropriate, should be a goal each person strives towards. I found there is a way to derive guidance from the self beyond mere anecdote, that the heart and mind of human beats and flows within each of us regardless of our experience.</p>
+            <p>This led me to an earnest desire to help others by focusing my systems mapping on resolving divisive, contentious issues. We are not here to benefit one or the other: we are here to help one another in ways that benefit, as equally as possible, all of us. This is the foundational starting point of my goal, duty, and desire.</p>
+            <div class="image-gallery swordsmanship-gallery">
+                <img src="PICTURES AND VIDEOS/Custom Sword Sheathe.jpeg" alt="Custom-Made Black Ash Sheathe and Sword Hilt" title="Custom-Made Black Ash Sheathe and Sword Hilt" />
+                <img src="PICTURES AND VIDEOS/Traditional Sword Hilt and Sheathe.jpeg" alt="Katana in Traditional Fittings" title="Katana in Traditional Fittings" />
+            </div>
+        </section>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        // Why Game logic
+        const whyGameSelect = document.getElementById('gradient-select');
+        const whyGameResponseBox = document.getElementById('response-box');
+        const initialResponse = whyGameResponseBox.innerHTML;
+        const scaleBeam = document.getElementById('why-game-scale-beam');
+
+        const whyGameResponses = {
+            "egocentric": "I dislike others when we argue. The frame is personal, and centered around the I.",
+            "semi-egocentric": "People dislike others when they don’t agree. The frame is partially removed from the I.",
+            "contextual": "Discord between people arises from disagreement.",
+            "structural": "Animosity is produced by conflicts between social values.",
+            "totality": "Within the context of emotional disposition, imbalance manifests when pernicious stimuli shift the balance between love and hate."
+        };
+
+        const scaleAngles = {
+            "egocentric": -20,
+            "semi-egocentric": -10,
+            "contextual": 0,
+            "structural": 10,
+            "totality": 20
+        };
+
+        whyGameSelect.addEventListener('change', function() {
+            const selected = this.value;
+            const response = whyGameResponses[selected];
+            if (response) {
+                whyGameResponseBox.innerHTML = `<p>${response}</p>`;
+                const angle = scaleAngles[selected] || 0;
+                scaleBeam.style.transform = `rotate(${angle}deg)`;
+            } else {
+                whyGameResponseBox.innerHTML = initialResponse;
+                scaleBeam.style.transform = 'rotate(0deg)';
+            }
+        });
+    </script>
+</body>
+</html>

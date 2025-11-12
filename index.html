@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nick Curtis - Strategic Systems Architect</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            padding-top: var(--nav-height);
+            background-image: url('PICTURES AND VIDEOS/Background Page Home.jpeg');
+            background-size: 100% auto;
+            background-position: center top;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: var(--section-spacing);
+            animation: fadeIn 0.8s ease;
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: var(--section-spacing);
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 300px;
+            height: 400px;
+            border-radius: 40%;
+            margin: 3rem auto 2rem;
+            overflow: hidden;
+            animation: fadeIn 1s ease;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        h1 {
+            color: #000000;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .side-by-side {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: var(--section-spacing);
+        }
+
+        .quote {
+            font-style: italic;
+            color: #000000;
+            margin: 1.5rem 0;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+        }
+
+        .profile-section h2 {
+            color: #000000;
+            font-size: 1.5rem; /* Adjusted to a subtitle size */
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--accent-color);
+            animation: underline 1s ease-in-out 0.8s forwards;
+        }
+
+        @keyframes underline {
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .interactive-elements {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 200px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .feature-box:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+
+        .feature-box:nth-child(3) {
+            animation-delay: 0.8s;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .feature-box h3 {
+            color: #000000;
+            margin-bottom: 0.5rem;
+        }
+
+        .hobby-section h3 {
+            color: var(--primary-color);
+            margin: 1.5rem 0 1rem;
+        }
+
+        .video-placeholder {
+            background: var(--card-bg);
+            width: 100%;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0;
+            border-radius: 10px;
+            color: #666;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .section li {
+            color: var(--text-color);
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: var(--section-spacing);
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 12px 30px;
+        }
+
+        @media (prefers-color-scheme: light) {
+            .section h2, .feature-box h3, .hobby-section h3 {
+                color: var(--primary-color); /* Bluish color for light mode headers */
+            }
+            .section li {
+                color: var(--text-color);
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .profile-image {
+                width: 200px;
+                height: 267px; /* Maintain 3:4 aspect ratio */
+            }
+
+            .video-placeholder {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('PICTURES AND VIDEOS/BlossomBerry IndxMob.jpeg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                z-index: -1;
+            }
+            body {
+                /* Remove the original background from the body on mobile */
+                background-image: none;
+                background-color: transparent; /* Ensure no fallback color interferes */
+                overflow-x: hidden; /* Prevent horizontal scrolling */
+            }
+            .side-by-side {
+                grid-template-columns: 1fr; /* Stack columns on mobile */
+            }
+            /* Adjust the woodworking hobby layout for mobile */
+            .hobby-section > div[style*="grid-template-columns"] {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 1rem !important;
+            }
+            .hobby-section > div[style*="grid-template-columns"] > img,
+            .hobby-section > div[style*="grid-template-columns"] > div {
+                grid-column: auto !important; /* Reset grid column placement */
+                width: auto; /* Allow natural sizing */
+            }
+            .profile-section h1,
+            .profile-section h2,
+            .profile-section .quote {
+                color: white;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            }
+            .profile-section h2 { font-size: 1.2rem; }
+            .quote { font-size: 1rem; }
+        }
+
+        /* Desktop-specific styles for section titles */
+        .section h2 {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <a href="index.html">Home</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="duluth.html">Discover Duluth & UMD</a>
+        <a href="resume.html">Resume</a>
+        <a href="career.html">Career Interests</a>
+        <a href="game.html">Game</a>
+    </nav>
+    <div class="page-nav prev-page">
+        <button onclick="navigatePages('prev')" title="Previous Page">←</button>
+    </div>
+    <div class="page-nav next-page">
+        <button onclick="navigatePages('next')" title="Next Page">→</button>
+    </div>
+    <div class="container">
+        <div class="profile-section">
+            <div class="profile-image">
+                <img src="PICTURES AND VIDEOS/Personal Picture.jpeg" alt="Nick Curtis" />
+            </div>
+            <h1>Nick Curtis</h1>
+            <h2>Strategic Systems Architect and Concept Innovator</h2>
+            <p class="quote">"He who speaks, does not know. He who knows, does not speak." -Lao Tzu</p>
+        </div>
+
+        <section class="section" id="about">
+            <h2>About Me</h2>
+            <p>I love designing scalable systems that blend ethical integrity, efficiency, and ecosystem-changing innovations that have the potential to rewire society. Whether you need a more efficient integrated hospital ecosystem or novel business approach utilizing integrated cross-domain recursive capital looping, I have a system solution that will slash your problem.</p>
+        </section>
+
+        <section class="section" id="talents">
+            <h2>My Talents</h2>
+            <p>I build system architectures that tackle issues in several fields to resolve persistent issues. These fields include the political sphere, the business realm, healthcare models, infrastructure design, and even interpersonal engineering. I take the existing system model, identify points of inefficiency, identify undesired outcomes or externalities, and repair the model to operate at peak efficiency. I take novel approaches to resolving conflicts within systems by examining inputs, diagramming processes, examining outputs, and adjusting the models. I leverage my penchant for original thinking with deep systems insight to reshape how problems are understood and resolved.</p>
+        </section>
+
+        <div class="side-by-side">
+            <section class="section" id="motivations">
+                <h2>My Motivations</h2>
+                <ul>
+                    <li>Ethical Integrity</li>
+                    <li>Strategic Independence</li>
+                    <li>Unifying Schisms</li>
+                    <li>Advocating for Complementary Duality</li>
+                </ul>
+            </section>
+
+            <section class="section" id="projects">
+                <h2>Projects and Research</h2>
+                <ul>
+                    <li>Duluth Integrated Healthcare Ecosystems</li>
+                    <li>Structural Supremacy Models in Business</li>
+                    <li>Philosophic Taxonomy Modeling</li>
+                    <li>Population, Nature, and Economics Research</li>
+                </ul>
+            </section>
+        </div>
+
+        <section class="section" id="hobbies">
+            <h2>Hobbies</h2>
+            <div class="hobby-section">
+                <h3>Systems Architecture</h3>
+                <p>I spend my free time diagramming system interactions, mapping and innovating complex concepts or systems. Because I tend to think in terms of words and process interactions, I naturally organize lists of terms to diagram interrelationships. This became a hobby after becoming enamored by the insights I could derive from the data during meditation. I have always felt that the resulting vision is the path to ameliorating various problems our society faces.</p>
+                <img src="PICTURES AND VIDEOS/Indx System Sample.jpeg" alt="Basic Hierarchical Structure of Business" title="Basic Hierarchical Structure of Business" style="width: 600px; max-width: 100%; border-radius: 8px; margin-top: 1rem; display: block; margin-left: auto; margin-right: auto;">
+                
+                <h3>Woodworking</h3>
+                <p>Woodworking ultimately culminates in a rudimentary understanding of systems. From gathering raw materials, to preparing the wood, working the wood, applying finish to the wood—the success of these processes are all intertwined and dependent on the quality of care given to each step. Learning to work with wood in a production capacity taught me how to express my aesthetic creativity in a form that is fully functional. It led me to unify the arts and the sciences into one cohesive whole, not two separate things in friction with each other.</p>
+                <div style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; margin-top: 1rem; flex-wrap: wrap;">
+                    <img src="PICTURES AND VIDEOS/Log Table.jpeg" alt="Cross-Section Cut of a Log as a Table Top" title="Cross-Section Cut of a Log as a Table Top" style="width: 300px; border-radius: 8px; grid-column: 2 / 3;">
+                    <div style="grid-column: 3 / 4; display: flex; justify-content: center;">
+                        <a href="hobbies.html" class="cta-button">Detailed Hobbies</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="video">
+            <h2>Introduction Video</h2>
+            <div class="video-placeholder">
+                [Video Introduction Placeholder]
+            </div>
+        </section>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        // Interactive elements
+        document.getElementById('greetButton')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            const time = new Date().getHours();
+            let greeting = '';
+            
+            if (time < 12) greeting = 'Good morning';
+            else if (time < 18) greeting = 'Good afternoon';
+            else greeting = 'Good evening';
+            
+            this.textContent = `${greeting}! 👋`;
+            
+            // Add a bounce effect
+            this.style.transform = 'scale(1.1)';
+            setTimeout(() => this.style.transform = 'scale(1)', 200);
+        });
+
+        // Feature boxes interaction
+        document.querySelectorAll('.feature-box').forEach(box => {
+            box.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#3498db10';
+            });
+            
+            box.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '';
+            });
+
+            box.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => this.style.transform = '', 150);
+            });
+        });
+    </script>
+</body>
+</html>
