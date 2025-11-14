@@ -202,6 +202,10 @@
             .resume-block h2 { font-size: 1.1rem; }
             .project h3, .edu-item h3 { font-size: 1rem; }
             .skill, .study-list li, .edu-item p { font-size: 0.9rem; }
+            .contact-info {
+                 flex-direction: column; /* Stack items vertically */
+            }
+            .contact-info a { word-break: break-all; } /* Break long words/URLs */
         }
         @media print {
             .resume-columns { gap: 1.5rem; }
