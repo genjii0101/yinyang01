@@ -334,18 +334,20 @@ ul {
 }
 
 /* --- TABLET LANDSCAPE STYLES --- */
-/* Targets devices wider than mobile but narrower than full desktop */
-@media (min-width: 901px) and (max-width: 1200px) {
+/* Targets devices wider than mobile but not as wide as full desktops. */
+@media (min-width: 901px) and (max-width: 1280px) {
     body {
-        /* Ensures the entire background image is visible, preventing cropping */
-        background-size: contain;
+        /*
+         * This scales the background to be 100% of the screen's width and adjusts
+         * height automatically. It prevents the aggressive "zoom" of 'cover' on
+         * wide, short viewports like landscape tablets, showing more of the image.
+         */
+        background-size: 100% auto;
 
-        /* Adds a dark background color to fill the space around the contained image,
-           matching the site's primary dark theme color. */
-        background-color: #2c3e50;
+        /* A fallback color in case content overflows the background height. */
+        background-color: var(--background-color);
     }
 }
-
 
 /* --- DARK MODE STYLES --- */
 @media (prefers-color-scheme: dark) {
